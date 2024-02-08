@@ -28,7 +28,7 @@ class PostVideoFragment : BaseFragment(R.layout.fragment_post_video) {
     lateinit var binding: FragmentPostVideoBinding
 
     private val args by navArgs<PostVideoFragmentArgs>()
-    private val localVideo: LocalVideo by lazy { args.localVideo }
+    private val localVideo:LocalVideo by lazy { args.localVideo }
     override val viewModel by viewModels<PostVideoViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
