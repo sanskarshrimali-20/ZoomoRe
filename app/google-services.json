@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "607215661361",
+    "project_id": "zoomore",
+    "storage_bucket": "zoomore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607215661361:android:266015a6540d111dee0010",
+        "android_client_info": {
+          "package_name": "com.zoomore.reelapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH52TP_XhzI8qmKvfqnUWtRYC3RY_7E28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
