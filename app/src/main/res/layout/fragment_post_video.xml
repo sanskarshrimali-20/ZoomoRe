@@ -6,11 +6,11 @@
     <data>
 
         <import type="com.zoomore.reelapp.models.upload.Progress"/>
-        <import type="com.zoomore.reelapp.presentation.ui.upload.post_video.PostVideoViewModel" />
+        <import type="com.zoomore.reelapp.presentation.ui.upload.post_video.PostVideoViewModel"/>
 
         <variable
-            name="viewModel"
-            type="com.zoomore.reelapp.presentation.ui.upload.post_video.PostVideoViewModel" />
+            name="viewmodel"
+            type="PostVideoViewModel" />
 
     </data>
 
@@ -20,152 +20,148 @@
         android:background="@android:color/white"
         tools:context=".presentation.ui.upload.post_video.PostVideoFragment">
 
-        <TextView
-            android:id="@+id/sign_up_plain_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/create_video"
-            android:textColor="@color/dark_black"
-            android:textSize="@dimen/_14ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/sign_up_plain_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/create_video"
+        android:textColor="@color/dark_black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/_6sdp"
-            android:contentDescription="@string/back_button"
-            app:layout_constraintBottom_toBottomOf="@+id/sign_up_plain_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/sign_up_plain_text"
-            app:srcCompat="@drawable/ic_arrow_back" />
-
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/video_thumbnail"
-            android:layout_width="@dimen/_70sdp"
-            android:layout_height="@dimen/_70sdp"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="@dimen/_24sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            app:shapeAppearance="@style/roundedImageView"
-            android:contentDescription="@string/video_thumbnail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sign_up_plain_text"
-            tools:srcCompat="@drawable/ic_launcher_background" />
-
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/loading_bar"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:indeterminate="true"
-            app:indicatorColor="@color/pinkBtnBackground"
-            app:layout_constraintBottom_toBottomOf="@+id/video_thumbnail"
-            app:layout_constraintEnd_toEndOf="@+id/video_thumbnail"
-            app:layout_constraintStart_toStartOf="@+id/video_thumbnail"
-            app:layout_constraintTop_toTopOf="@+id/video_thumbnail"
-            app:trackColor="@color/light_grey" />
-
-        <EditText
-            android:id="@+id/description_text"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="@dimen/_6sdp"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:background="@android:color/white"
-            android:ems="10"
-            android:hint="@string/describe_your_video"
-            android:inputType="text"
-            android:text="@={viewModel.liveDescription}"
-            android:maxLength="150"
-            android:textColor="@color/dark_black"
-            android:textColorHint="@color/medium_grey"
-            app:layout_constraintBottom_toTopOf="@+id/hashtag_btn"
-            app:layout_constraintEnd_toStartOf="@+id/video_thumbnail"
-            app:layout_constraintStart_toStartOf="@+id/back_btn"
-            app:layout_constraintTop_toTopOf="@+id/video_thumbnail" />
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_6sdp"
+        android:contentDescription="@string/back_button"
+        app:layout_constraintBottom_toBottomOf="@+id/sign_up_plain_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sign_up_plain_text"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/video_thumbnail"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        app:shapeAppearance="@style/roundedImageView"
+        android:contentDescription="@string/video_thumbnail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_plain_text"
+        tools:srcCompat="@drawable/ic_launcher_background" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/hashtag_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/_4sdp"
-            android:text="@string/hashtags"
-            android:textAllCaps="false"
-            app:backgroundTint="@android:color/white"
-            app:cornerRadius="@dimen/_4sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/video_thumbnail"
-            app:layout_constraintStart_toStartOf="@+id/description_text" />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/loading_bar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/pinkBtnBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/video_thumbnail"
+        app:layout_constraintEnd_toEndOf="@+id/video_thumbnail"
+        app:layout_constraintStart_toStartOf="@+id/video_thumbnail"
+        app:layout_constraintTop_toTopOf="@+id/video_thumbnail"
+        app:trackColor="@color/light_grey" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/friends_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:padding="@dimen/_4sdp"
-            android:text="@string/friends"
-            android:textAllCaps="false"
-            app:backgroundTint="@android:color/white"
-            app:cornerRadius="@dimen/_4sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/video_thumbnail"
-            app:layout_constraintStart_toEndOf="@+id/hashtag_btn" />
+    <EditText
+        android:id="@+id/description_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:text="@{viewmodel.liveDescription}"
+        android:hint="@string/describe_your_video"
+        android:inputType="text"
+        android:maxLength="150"
+        android:textColor="@color/dark_black"
+        android:textColorHint="@color/medium_grey"
+        app:layout_constraintBottom_toTopOf="@+id/hashtag_btn"
+        app:layout_constraintEnd_toStartOf="@+id/video_thumbnail"
+        app:layout_constraintStart_toStartOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="@+id/video_thumbnail" />
 
-        <View
-            android:id="@+id/line"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_1sdp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:background="@color/light_grey"
-            app:layout_constraintEnd_toEndOf="@+id/video_thumbnail"
-            app:layout_constraintStart_toStartOf="@+id/hashtag_btn"
-            app:layout_constraintTop_toBottomOf="@+id/friends_btn" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hashtag_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp"
+        android:text="@string/hashtags"
+        android:textAllCaps="false"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/video_thumbnail"
+        app:layout_constraintStart_toStartOf="@+id/description_text" />
 
-        <Button
-            android:id="@+id/post_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginStart="@dimen/_6sdp"
-            android:layout_marginBottom="@dimen/_6sdp"
-            android:text="@string/post"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            app:backgroundTint="@color/pinkBtnBackground"
-            app:cornerRadius="@dimen/_4sdp"
-            android:clickable="@{viewModel.uploadStatus != Progress.ACTIVE}"
-            app:changeVisibility="@{viewModel.uploadStatus != Progress.ACTIVE}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/drafts_btn" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/friends_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:padding="@dimen/_4sdp"
+        android:text="@string/friends"
+        android:textAllCaps="false"
+        app:backgroundTint="@android:color/white"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/video_thumbnail"
+        app:layout_constraintStart_toEndOf="@+id/hashtag_btn" />
 
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="@+id/video_thumbnail"
+        app:layout_constraintStart_toStartOf="@+id/hashtag_btn"
+        app:layout_constraintTop_toBottomOf="@+id/friends_btn" />
 
+    <Button
+        android:id="@+id/post_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:clickable="@{viewmodel.uploadStatus != Progress.ACTIVE}"
+        app:changevisibility ="@{viewmodel.uploadStatus != Progress.ACTIVE}"
+        android:text="@string/post"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/pinkBtnBackground"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/drafts_btn" />
 
-        <Button
-            android:id="@+id/drafts_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginEnd="@dimen/_6sdp"
-            android:layout_marginBottom="@dimen/_6sdp"
-            android:text="@string/drafts"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            app:backgroundTint="@color/pinkBtnBackground"
-            app:cornerRadius="@dimen/_4sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/post_btn"
-            app:layout_constraintHorizontal_bias="0.5"
-            android:clickable="@{viewModel.uploadStatus == Progress.IDLE}"
-            app:changeVisibility="@{viewModel.uploadStatus == Progress.IDLE}"
-            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/drafts_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:clickable="@{viewmodel.uploadStatus == Progress.IDLE}"
+        app:changevisibility ="@{viewmodel.uploadStatus == Progress.IDLE}"
+        android:text="@string/drafts"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/pinkBtnBackground"
+        app:cornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/post_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
         <include
             android:id="@+id/loading_layout"

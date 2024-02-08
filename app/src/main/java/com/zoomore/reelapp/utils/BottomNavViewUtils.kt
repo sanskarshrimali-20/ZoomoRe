@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
-import com.zoomore.reelapp.MainActivity
+import com.zoomore.reelapp.presentation.MainActivity
 import com.zoomore.reelapp.R
 
 object BottomNavViewUtils {

@@ -1,9 +1,10 @@
-package com.zoomore.reelapp
+package com.zoomore.reelapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.zoomore.reelapp.R
 import com.zoomore.reelapp.databinding.ActivityMainBinding
 import timber.log.Timber
 

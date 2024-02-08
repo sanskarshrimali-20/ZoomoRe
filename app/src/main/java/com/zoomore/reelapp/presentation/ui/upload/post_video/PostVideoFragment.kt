@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.zoomore.reelapp.MainActivity
+import com.zoomore.reelapp.presentation.MainActivity
 import com.zoomore.reelapp.R
 import com.zoomore.reelapp.databinding.FragmentPostVideoBinding
 import com.zoomore.reelapp.models.local.LocalVideo

@@ -32,9 +32,10 @@ class CreateUsernameFragment : BaseFragment(R.layout.fragment_create_username) {
     override fun setUpLayout() {
         binding = FragmentCreateUsernameBinding.bind(requireView()).also {
             it.lifecycleOwner = viewLifecycleOwner
-            it.viewModel = viewModel
+            it.viemodel = viewModel
         }
     }
+
 
     override fun setUpClickListeners() {
         binding.signUpBtn.setOnClickListener {

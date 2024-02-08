@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="androidx.lifecycle.LiveData"/>
         <import type="com.zoomore.reelapp.models.upload.Progress"/>
+
         <variable
             name="uploadStatus"
             type="LiveData&lt;Progress&gt;" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:changeVisibility="@{uploadStatus == Progress.ACTIVE}"
+        app:changevisibility="@{uploadStatus == Progress.ACTIVE}"
         android:background="@android:color/transparent">
         <!--    In case you are wondering why we are setting stuff to match_parent, -->
         <!--    this is to block other view's from being accessed until the video is uploaded.-->
@@ -66,4 +69,7 @@
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </layout>
