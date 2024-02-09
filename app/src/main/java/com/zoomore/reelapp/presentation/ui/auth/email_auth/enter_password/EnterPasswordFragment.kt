@@ -71,7 +71,7 @@ class EnterPasswordFragment : BaseFragment(R.layout.fragment_create_password) {
     override fun setUpClickListeners() {
         super.setUpClickListeners()
         binding.authBtn.setOnClickListener {
-            if (args.isLogIn) viewModel.verifyPassword()
+            if (args.isLogIn) viewModel.verifyPassword(emailBody)
             else viewModel.logInWithEmailBody(emailBody)
         }
     }

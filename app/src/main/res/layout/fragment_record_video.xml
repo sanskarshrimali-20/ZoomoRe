@@ -60,7 +60,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
@@ -203,8 +202,6 @@
             app:changeVisibility="@{viewModel.hasRecordingStarted == false}"
             tools:visibility="visible" />
 
-
-
         <TextView
             android:id="@+id/upload_plain_text"
             style="@style/record_items_test"
@@ -218,8 +215,6 @@
             app:layout_constraintStart_toStartOf="@+id/upload_image_btn"
             app:layout_constraintTop_toBottomOf="@+id/upload_image_btn"
             tools:visibility="visible" />
-
-
 
         <View
             android:id="@+id/bottom_divider"
@@ -243,8 +238,6 @@
             app:changeVisibility="@{viewModel.isRecording == false}"
             app:layout_constraintStart_toStartOf="parent"
             tools:visibility="gone" />
-
-
 
         <ImageView
             android:id="@+id/music_note_image"
@@ -282,7 +275,6 @@
             app:changeVisibility="@{viewModel.isRecording == true}"
             tools:visibility="visible" />
 
-
         <ImageView
             android:id="@+id/pause_recording_btn"
             android:layout_width="wrap_content"
@@ -295,7 +287,6 @@
             app:changeVisibility="@{viewModel.isRecording == true}"
             app:layout_constraintStart_toStartOf="parent"
             tools:visibility="visible" />
-
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/finish_recording_btn"
@@ -311,8 +302,7 @@
             app:rippleColor="@color/pinkBtnBackground"
             app:changeVisibility="@{viewModel.hasRecordingStarted == true}"
             app:srcCompat="@drawable/ic_check"
-            tools:visibility="gone" />
-
+            />
 
         <include
             android:id="@+id/little_space_layout"

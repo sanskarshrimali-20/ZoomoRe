@@ -21,7 +21,7 @@ object PermissionUtils {
         Manifest.permission.RECORD_AUDIO
     )
 
-    fun isPermissionGranted(context: Context, permission: String) =
+    private fun isPermissionGranted(context: Context, permission: String) =
         ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED
 
     fun arePermissionsGranted(context: Context, permissionList: Collection<String>) =

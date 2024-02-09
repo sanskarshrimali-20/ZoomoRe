@@ -38,14 +38,18 @@ class EnterPasswordViewModel : BaseViewModel() {
     /**
      * Verify that the password the user is creating during sign up is valid
      */
-    fun verifyPassword() {
+    fun verifyPassword(emailBody: EmailBody) {
         val password = passwordInput.value ?: ""
 
         val hasDigit = password.any { it.isDigit() }
         val hasCharacter = password.any { it.isLetter() }
 
-        if (password.length > 8 && hasCharacter && hasDigit) // Password meets our requirements
+        // Password meets our requirements
+        if (password.length > 8 && hasCharacter && hasDigit) {
             _navigate.value = true
+            logInWithEmailBody(emailBody)
+        }
+
         else
             showMessage(R.string.invalid_password)
     }
