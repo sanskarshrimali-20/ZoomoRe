@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.andre_max.tiktokclone.presentation.ui.search.search_page.group.SmallSuggestionGroup
+import com.zoomore.reelapp.presentation.ui.search.search_page.group.SmallSuggestionGroup
 import com.zoomore.reelapp.R
 import com.zoomore.reelapp.databinding.FragmentSearchPageBinding
 import com.zoomore.reelapp.utils.KeyboardUtils

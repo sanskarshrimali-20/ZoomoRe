@@ -2,15 +2,14 @@ package com.zoomore.reelapp.repo.network.auth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.zoomore.reelapp.models.sign_up.EmailBody
 import com.zoomore.reelapp.repo.network.utils.safeAccess
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.zoomore.reelapp.models.sign_up.EmailBody
 import kotlinx.coroutines.tasks.await
 
-// TODO: Abstract this to an interface to follow Dependency Inversion (SOLID)
 class AuthRepo(
     private val fireAuth: FirebaseAuth = Firebase.auth
 ) {

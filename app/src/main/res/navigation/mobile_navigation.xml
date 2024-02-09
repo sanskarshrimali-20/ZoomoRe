@@ -2,14 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/homeFragment"
+    android:id="@+id/mobile_navigation.xml">
 
     <fragment
         android:id="@+id/profileWithoutAccountFragment"
         android:name="com.zoomore.reelapp.presentation.ui.profile.without_account.ProfileWithoutAccountFragment"
         android:label="Sign up"
-        tools:layout="@layout/fragment_profile_without_account" />
+        tools:layout="@layout/fragment_profile_without_account"/>
 
     <fragment
         android:id="@+id/inbox_fragment"
@@ -22,6 +22,7 @@
         android:name="com.zoomore.reelapp.presentation.ui.discover.DiscoverFragment"
         android:label="Discover"
         tools:layout="@layout/fragment_discover">
+
         <action
             android:id="@+id/action_discoverFragment_to_largeVideoFragment"
             app:destination="@id/largeVideoFragment" />
@@ -31,17 +32,21 @@
         <action
             android:id="@+id/action_discoverFragment_to_hashtagPageFragment"
             app:destination="@id/hashtagPageFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/inboxFragment"
         android:name="com.zoomore.reelapp.presentation.ui.inbox.InboxFragment"
         android:label="Inbox"
         tools:layout="@layout/fragment_discover" />
+
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.zoomore.reelapp.presentation.ui.auth.sign_up.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/sign_up_page">
+
         <action
             android:id="@+id/action_signUpFragment_to_ageFragment"
             app:destination="@id/ageFragment" />
@@ -54,21 +59,27 @@
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/ageFragment"
         android:name="com.zoomore.reelapp.presentation.ui.auth.age_verification.AgeFragment"
         android:label="Age Fragment"
         tools:layout="@layout/fragment_age">
+
         <action
             android:id="@+id/action_ageFragment_to_selectBasicSignUpFragment"
             app:destination="@id/selectBasicSignUpFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/createUsernameFragment"
         android:name="com.zoomore.reelapp.presentation.ui.auth.create_username.CreateUsernameFragment"
         android:label="fragment_create_username"
         tools:layout="@layout/fragment_create_username">
+
         <action
             android:id="@+id/action_createUsernameFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -78,29 +89,36 @@
             app:nullable="true" />
         <argument
             android:name="googleBody"
-            app:argType="com.example.zoomore.models.sign_up.GoogleBody"
+            app:argType="com.zoomore.reelapp.models.sign_up.GoogleBody"
             app:nullable="true" />
         <argument
             android:name="emailBody"
-            app:argType="com.example.zoomore.models.sign_up.EmailBody"
+            app:argType="com.zoomore.reelapp.models.sign_up.EmailBody"
             app:nullable="true" />
+
     </fragment>
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.zoomore.reelapp.presentation.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_homeFragment_to_profileWithAccountFragment"
             app:destination="@id/profileWithAccountFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/selectMediaFragment"
         android:name="com.zoomore.reelapp.presentation.ui.upload.select_media.SelectMediaFragment"
         android:label="SelectMediaFragment">
+
         <action
             android:id="@+id/action_selectMediaFragment_to_previewVideoFragment"
             app:destination="@id/previewVideoFragment" />
+
     </fragment>
 
     <fragment
@@ -108,6 +126,7 @@
         android:name="com.zoomore.reelapp.presentation.ui.auth.select_basic_auth.SelectBasicAuthFragment"
         android:label="SelectBasicSignUpFragment"
         tools:layout="@layout/fragment_select_basic_sign_up">
+
         <action
             android:id="@+id/action_selectBasicSignUpFragment_to_createPasswordFragment"
             app:destination="@id/createPasswordFragment" />
@@ -121,12 +140,15 @@
             android:name="isLogIn"
             app:argType="boolean"
             android:defaultValue="false" />
+
     </fragment>
+
     <fragment
         android:id="@+id/createPasswordFragment"
         android:name="com.zoomore.reelapp.presentation.ui.auth.email_auth.enter_password.EnterPasswordFragment"
         android:label="fragment_create_password"
         tools:layout="@layout/fragment_create_password">
+
         <action
             android:id="@+id/action_createPasswordFragment_to_createUsernameFragment"
             app:destination="@id/createUsernameFragment" />
@@ -137,12 +159,15 @@
             android:name="isLogIn"
             app:argType="boolean"
             android:defaultValue="false" />
+
     </fragment>
+
     <fragment
         android:id="@+id/enterCodeFragment"
         android:name="com.zoomore.reelapp.presentation.ui.auth.phone_auth.enter_code.EnterCodeFragment"
         android:label="EnterCodeFragment"
         tools:layout="@layout/fragment_enter_code">
+
         <argument
             android:name="phoneNumber"
             app:argType="string" />
@@ -153,56 +178,72 @@
             android:name="isLogIn"
             app:argType="boolean"
             android:defaultValue="false" />
+
+
     </fragment>
+
     <fragment
         android:id="@+id/meFragment"
         android:name="com.zoomore.reelapp.presentation.ui.profile.MeFragment"
         android:label="MeFragment"
         tools:layout="@layout/fragment_me">
+
         <action
             android:id="@+id/action_meFragment_to_largeVideoFragment"
             app:destination="@id/largeVideoFragment" />
         <action
             android:id="@+id/action_meFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/largeVideoFragment"
         android:name="com.zoomore.reelapp.presentation.ui.large_video.LargeVideoFragment"
         android:label="LargeVideoFragment"
         tools:layout="@layout/large_video_layout">
+
         <argument
             android:name="remoteVideo"
-            app:argType="com.andre_max.tiktokclone.models.video.RemoteVideo" />
+            app:argType="com.zoomore.reelapp.models.video.RemoteVideo"/>
+
         <action
             android:id="@+id/action_largeVideoFragment_to_profileWithAccountFragment"
             app:destination="@id/profileWithAccountFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/previewVideoFragment"
         android:name="com.zoomore.reelapp.presentation.ui.upload.preview_video.PreviewVideoFragment"
         android:label="PreviewVideoFragment"
         tools:layout="@layout/fragment_preview_video">
+
         <argument
             android:name="localVideo"
-            app:argType="com.example.zoomore.models.local.LocalVideo" />
+            app:argType="com.zoomore.reelapp.models.local.LocalVideo" />
         <action
             android:id="@+id/action_previewVideoFragment_to_postVideoFragment"
             app:destination="@id/postVideoFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/postVideoFragment"
         android:name="com.zoomore.reelapp.presentation.ui.upload.post_video.PostVideoFragment"
         android:label="PostVideoFragment"
         tools:layout="@layout/fragment_post_video">
+
         <argument
             android:name="localVideo"
-            app:argType="com.example.zoomore.models.local.LocalVideo" />
+            app:argType="com.zoomore.reelapp.models.local.LocalVideo"/>
+
         <action
             android:id="@+id/action_postVideoFragment_to_largeVideoFragment"
             app:destination="@id/largeVideoFragment"
             app:popUpTo="@id/meFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/profileWithAccountFragment"
         android:name="com.zoomore.reelapp.presentation.ui.profile.with_account.ProfileWithAccountFragment"
@@ -212,60 +253,83 @@
         <argument
             android:name="uid"
             app:argType="string" />
+
         <action
             android:id="@+id/action_profileWithAccountFragment_to_largeVideoFragment"
-            app:destination="@id/largeVideoFragment" />
+            app:destination="@id/largeVideoFragment"/>
+
+
     </fragment>
+
     <fragment
         android:id="@+id/recordVideoFragment"
         android:name="com.zoomore.reelapp.presentation.ui.upload.record.RecordVideoFragment"
         android:label="RecordVideoFragment"
         tools:layout="@layout/fragment_record_video">
+
         <action
             android:id="@+id/action_recordVideoFragment_to_createVideoFragment"
-            app:destination="@id/selectMediaFragment" />
+            app:destination="@id/selectMediaFragment"/>
+
         <action
             android:id="@+id/action_recordVideoFragment_to_previewVideoFragment"
-            app:destination="@id/previewVideoFragment" />
+            app:destination="@id/previewVideoFragment"/>
+
     </fragment>
+
     <fragment
         android:id="@+id/searchPageFragment"
         android:name="com.zoomore.reelapp.presentation.ui.search.search_page.SearchPageFragment"
         android:label="SearchPageFragment"
         tools:layout="@layout/fragment_search_page">
+
         <action
             android:id="@+id/action_searchPageFragment_to_profileWithAccountFragment"
-            app:destination="@id/profileWithAccountFragment" />
+            app:destination="@id/profileWithAccountFragment"/>
+
         <action
             android:id="@+id/action_searchPageFragment_to_searchResultsFragment"
-            app:destination="@id/searchResultsFragment" />
+            app:destination="@id/searchResultsFragment"/>
+
+
+
     </fragment>
+
     <fragment
         android:id="@+id/searchResultsFragment"
         android:name="com.zoomore.reelapp.presentation.ui.search.search_results.SearchResultsFragment"
         android:label="SearchResultsFragment"
         tools:layout="@layout/fragment_search_results">
+
         <action
             android:id="@+id/action_searchResultsFragment_to_largeVideoFragment"
-            app:destination="@id/largeVideoFragment" />
+            app:destination="@id/largeVideoFragment"/>
+
     </fragment>
+
     <fragment
         android:id="@+id/hashtagPageFragment"
         android:name="com.zoomore.reelapp.presentation.ui.selected_tag.SelectedTagFragment"
         android:label="HashtagPageFragment"
         tools:layout="@layout/fragment_selected_tag">
+
         <action
             android:id="@+id/action_hashtagPageFragment_to_largeVideoFragment"
-            app:destination="@id/largeVideoFragment" />
+            app:destination="@id/largeVideoFragment"/>
+
     </fragment>
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.zoomore.reelapp.presentation.ui.auth.log_in.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/log_in_page">
+
         <action
             android:id="@+id/action_loginFragment_to_selectBasicSignUpFragment"
-            app:destination="@id/selectBasicSignUpFragment" />
+            app:destination="@id/selectBasicSignUpFragment"/>
+
+
     </fragment>
 
 </navigation>

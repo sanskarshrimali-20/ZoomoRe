@@ -3,16 +3,17 @@ package com.zoomore.reelapp.presentation.ui.auth.create_username
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.zoomore.reelapp.models.upload.Progress
-import com.zoomore.reelapp.repo.network.user.UserRepo
-import com.zoomore.reelapp.repo.network.name.DefaultNameRepo
-import com.zoomore.reelapp.repo.network.user.DefaultUserRepo
 import com.zoomore.reelapp.R
+import com.zoomore.reelapp.models.upload.Progress
 import com.zoomore.reelapp.repo.network.auth.AuthRepo
+import com.zoomore.reelapp.repo.network.name.DefaultNameRepo
 import com.zoomore.reelapp.repo.network.name.NameRepo
+import com.zoomore.reelapp.repo.network.user.DefaultUserRepo
+import com.zoomore.reelapp.repo.network.user.UserRepo
 import com.zoomore.reelapp.utils.architecture.BaseViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
+
 
 class CreateUsernameViewModel(
     private val nameRepo: NameRepo = DefaultNameRepo(),
@@ -20,7 +21,8 @@ class CreateUsernameViewModel(
     private val userRepo: UserRepo = DefaultUserRepo()
 ) : BaseViewModel(), NameRepo by nameRepo {
 
-    lateinit var args: CreateUsernameFragmentArgs
+
+    private lateinit var args: CreateUsernameFragmentArgs
 
     val liveUsername = MutableLiveData("")
 
@@ -55,7 +57,7 @@ class CreateUsernameViewModel(
             val authResult = getAuthResult()
 
             // To avoid if...else statements everywhere, I preferred using Uncle Bob's method of throwing exceptions
-            try {
+           /* try {
                 val profilePicture = args.googleBody?.profilePicture
                 val isSuccess = userRepo
                     .addUserToDatabase(username, authResult.forceData(), profilePicture)
@@ -65,11 +67,12 @@ class CreateUsernameViewModel(
                     registerUserName(username)
                     _progress.value = Progress.DONE
                 }
-            } catch (e: Exception) {
+            }
+            catch (e: Exception) {
                 Timber.e(e, "Caught exception")
                 showMessage(R.string.error_during_account_creation)
                 _progress.value = Progress.FAILED
-            }
+            }*/
         }
     }
 

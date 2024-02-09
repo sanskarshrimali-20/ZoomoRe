@@ -1,6 +1,6 @@
 package com.zoomore.reelapp.repo.network.videos
 
-import com.andre_max.tiktokclone.repo.network.tag.DefaultTagRepo
+import com.zoomore.reelapp.repo.network.tag.DefaultTagRepo
 import com.zoomore.reelapp.models.video.RemoteVideo
 import com.zoomore.reelapp.models.video.VideoType
 import com.zoomore.reelapp.repo.network.utils.FirePath

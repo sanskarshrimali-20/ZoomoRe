@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.zoomore.reelapp.repo.local.record.RecordVideoRepo
-import com.andre_max.tiktokclone.repo.local.record.DefaultRecordVideoRepo
+import com.zoomore.reelapp.repo.local.record.DefaultRecordVideoRepo
 import com.zoomore.reelapp.R
 import com.zoomore.reelapp.models.local.LocalRecordLocation
 import com.zoomore.reelapp.models.local.LocalVideo
