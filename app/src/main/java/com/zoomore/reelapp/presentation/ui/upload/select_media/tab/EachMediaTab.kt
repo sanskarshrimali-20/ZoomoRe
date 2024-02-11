@@ -14,6 +14,7 @@ import com.zoomore.reelapp.presentation.ui.upload.select_media.tab.group.LocalVi
 import com.zoomore.reelapp.repo.local.media.DefaultLocalMediaRepo
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import com.zoomore.reelapp.models.local.LocalVideo
 import kotlin.properties.Delegates
 
 /**
@@ -31,10 +32,12 @@ class EachMediaTab : Fragment(R.layout.fragment_each_media) {
         super.onViewCreated(view, savedInstanceState)
         setUpLayout()
 
-        if (tabPosition == 0)
+        if (tabPosition == 0){
             awaitLocalImages()
-        else
+        }
+        else{
             awaitLocalVideos()
+        }
     }
 
     private fun setUpLayout() {
@@ -60,7 +63,7 @@ class EachMediaTab : Fragment(R.layout.fragment_each_media) {
     private fun awaitLocalVideos() {
         localMediaRepo.listOfLocalVideo.observe(viewLifecycleOwner) { listOfLocalVideo ->
             listOfLocalVideo?.forEach { localVideo ->
-                val localVideoGroup = LocalVideoGroup(localVideo, lifecycleScope) {
+                val localVideoGroup = LocalVideoGroup(localVideo/*, lifecycleScope*/) {
                     findNavController()
                         .navigate(
                         SelectMediaFragmentDirections.actionSelectMediaFragmentToPreviewVideoFragment(localVideo)

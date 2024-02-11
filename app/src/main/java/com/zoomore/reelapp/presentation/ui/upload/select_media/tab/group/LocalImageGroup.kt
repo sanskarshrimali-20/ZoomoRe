@@ -13,7 +13,7 @@ class LocalImageGroup(
 ) : BindableItem<LocalImageGroupLayoutBinding>() {
 
     override fun bind(binding: LocalImageGroupLayoutBinding, position: Int) {
-        binding.root.setOnClickListener { onClickListener() }
+        binding.localImage.setOnClickListener { onClickListener() }
         Glide.with(binding.localImage).load(localImage.url).centerCrop().into(binding.localImage)
     }
 

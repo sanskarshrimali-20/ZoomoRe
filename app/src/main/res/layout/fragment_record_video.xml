@@ -72,7 +72,6 @@
             app:layout_constraintTop_toBottomOf="@+id/top_divider"
             app:layout_constraintVertical_bias="0.0">
 
-
             <ImageView
                 android:id="@+id/flip_camera_btn"
                 android:layout_width="@dimen/_28sdp"
@@ -82,7 +81,6 @@
                 app:layout_constraintEnd_toStartOf="@+id/right_divider"
                 app:layout_constraintTop_toBottomOf="@+id/top_divider"
                 app:srcCompat="@drawable/ic_outline_flip_camera_ios_white" />
-
 
             <TextView
                 android:id="@+id/flip_plain_text"

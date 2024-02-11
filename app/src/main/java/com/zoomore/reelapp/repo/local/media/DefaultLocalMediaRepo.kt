@@ -49,7 +49,7 @@ class DefaultLocalMediaRepo : LocalMediaRepo {
                             .toUri()
                     Timber.d("contentUri is $contentUri")
 //                val filePath = getRealPathFromURI(context, contentUri)
-                    val filePath = getFilePathFromCursor(cursor)
+                    val filePath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA))
                     val dateCreated =
                         cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATE_ADDED))
                     val userImage = LocalImage(filePath, dateCreated)
@@ -89,7 +89,7 @@ class DefaultLocalMediaRepo : LocalMediaRepo {
 
             while (cursor.moveToNext()) {
                 try {
-                    val fileUri = getFilePathFromCursor(cursor)
+                    val fileUri = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA))
                     val videoDuration = getVideoDuration(context, fileUri?.toUri())
                     val dateCreated =
                         cursor.getColumnName(cursor.getColumnIndex(MediaStore.Video.Media.DATE_ADDED))

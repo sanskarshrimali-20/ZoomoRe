@@ -20,14 +20,16 @@ import timber.log.Timber
 // Reasons I'm not using GlobalScope is because it executes the suspend function even when it isn't needed (no lifecycle)
 class LocalVideoGroup(
     private val localVideo: LocalVideo,
+/*
     private val scope: CoroutineScope,
+*/
     private val onClickListener: () -> Unit
 ) : BindableItem<LocalVideoGroupLayoutBinding>() {
 
     override fun bind(binding: LocalVideoGroupLayoutBinding, position: Int) {
         Timber.d("Cursor url is ${localVideo.filePath} and Uri parser uri is ${localVideo.filePath?.toUri()}")
 
-        scope.launch(Dispatchers.IO) {
+      /*  scope.launch(Dispatchers.IO) {
             val mediaMetadataRetriever = MediaMetadataRetriever().apply {
                 setDataSource(binding.root.context, Uri.parse(localVideo.filePath))
             }
@@ -38,7 +40,14 @@ class LocalVideoGroup(
                 Glide.with(binding.root.context).load(bitmap).centerCrop()
                     .into(binding.localVideoThumbnail)
             }
+        }*/
+        val mediaMetadataRetriever = MediaMetadataRetriever().apply {
+            setDataSource(binding.root.context, Uri.parse(localVideo.filePath))
         }
+        val bitmap = mediaMetadataRetriever.frameAtTime
+        mediaMetadataRetriever.release()
+        Glide.with(binding.root.context).load(bitmap).centerCrop()
+            .into(binding.localVideoThumbnail)
 
         binding.root.setOnClickListener { onClickListener() }
         binding.localVideoDuration.text =
