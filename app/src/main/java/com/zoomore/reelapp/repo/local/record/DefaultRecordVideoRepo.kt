@@ -35,8 +35,8 @@ class DefaultRecordVideoRepo : RecordVideoRepo {
                 put(MediaStore.Video.Media.DATE_ADDED, timeCreated)
                 put(MediaStore.Video.Media.DATE_MODIFIED, timeCreated)
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-                    put(MediaStore.Audio.Media.IS_PENDING, 1)
+                /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+                    put(MediaStore.Audio.Media.IS_PENDING, 1)*/
             }
 
             val contentUri =

@@ -104,9 +104,7 @@ class MainLargeVideo(
         }
         binding.authorIcon.setOnClickListener { onPersonIconClicked(remoteVideo.authorUid) }
         binding.shareVideoBtn.setOnClickListener {
-            // TODO: Create a website that takes in a remote video id and displays them. The website will also check if the
-            // device has the app and make an intent to the app. For now, just create a link to the firebase video
-            val intent = Intent(Intent.ACTION_SEND)
+            val intent = Intent(Intent.ACTION_VIEW)
             intent.putExtra(Intent.EXTRA_TEXT, remoteVideo.url)
             binding.root.context.startActivity(intent)
         }

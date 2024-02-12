@@ -60,4 +60,10 @@
         <item name="cornerSizeBottomRight">@dimen/_6sdp</item>
     </style>
 
+    <style name="BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+
+        <item name="android:background">@color/black</item>
+    </style>
+
+
 </resources>

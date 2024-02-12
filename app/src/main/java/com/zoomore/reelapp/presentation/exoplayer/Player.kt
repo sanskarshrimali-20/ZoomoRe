@@ -31,6 +31,7 @@ class Player(
     fun init() {
         Timber.d("Player.init has been called")
         createPlayer()
+        resumePlayer()
 
         playBtn.setOnClickListener {
             resumePlayer()

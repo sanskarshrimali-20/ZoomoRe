@@ -85,36 +85,36 @@
 
                 <ImageView
                     android:id="@+id/share_video_btn"
-                    android:layout_width="@dimen/_36sdp"
-                    android:layout_height="@dimen/_36sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_36sdp"
                     android:contentDescription="@string/share_video"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@drawable/ic_share" />
+                    app:srcCompat="@drawable/share" />
 
                 <ImageView
                     android:id="@+id/open_comment_section_btn"
                     android:layout_width="@dimen/_36sdp"
-                    android:layout_height="@dimen/_36sdp"
-                    android:layout_marginBottom="@dimen/_36sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
                     android:contentDescription="@string/open_comment_section"
                     app:layout_constraintBottom_toTopOf="@+id/share_video_btn"
                     app:layout_constraintEnd_toEndOf="@+id/share_video_btn"
-                    app:srcCompat="@drawable/ic_insert_comment" />
+                    app:srcCompat="@drawable/comment" />
 
                 <ImageView
                     android:id="@+id/like_video_icon"
-                    android:layout_width="@dimen/_36sdp"
-                    android:layout_height="@dimen/_36sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginBottom="@dimen/_36sdp"
                     android:contentDescription="@string/like_video"
                     app:changeVideoLikedIcon="@{isVideoLiked}"
                     app:layout_constraintBottom_toTopOf="@+id/open_comment_section_btn"
                     app:layout_constraintEnd_toEndOf="@+id/open_comment_section_btn"
                     app:layout_constraintStart_toStartOf="@+id/open_comment_section_btn"
-                    app:srcCompat="@drawable/heart" />
+                    app:srcCompat="@drawable/favorite" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/author_icon"
@@ -139,6 +139,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/author_icon"
                     app:layout_constraintEnd_toEndOf="@+id/author_icon"
                     app:layout_constraintStart_toStartOf="@+id/author_icon"
+                    android:visibility="invisible"
                     app:layout_constraintTop_toBottomOf="@+id/author_icon"
                     app:srcCompat="@drawable/ic_add_circle" />
 
