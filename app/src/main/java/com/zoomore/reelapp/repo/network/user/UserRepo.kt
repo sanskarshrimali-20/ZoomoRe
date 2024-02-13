@@ -33,12 +33,26 @@ interface UserRepo {
      *
      * @param username the user's username
      * @param authResult the authResult obtained after signing up that is useful for getting the uid
-     * @param googleProfilePicture the url path to the user's profile picture. This has a value if Google Sign-In was used
+     * @param profilePicture the url path to the user's profile picture. This has a value if Google Sign-In was used
      */
     suspend fun addUserToDatabase(
+        userDescription: String,
         username: String,
         authResult: AuthResult,
-        googleProfilePicture: String?
+        profilePicture: String?
+    ): TheResult<Boolean>
+
+    /**
+     * Saves the user to the database after signing up.
+     *
+     * @param username the user's username
+     * @param authResult the authResult obtained after signing up that is useful for getting the uid
+     * @param profilePicture the url path to the user's profile picture. This has a value if Google Sign-In was used
+     */
+    suspend fun editUserToDatabase(
+        userDescription: String,
+        username: String,
+        profilePicture: String?
     ): TheResult<Boolean>
 
     /**

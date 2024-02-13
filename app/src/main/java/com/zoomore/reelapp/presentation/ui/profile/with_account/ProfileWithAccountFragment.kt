@@ -46,6 +46,7 @@ class ProfileWithAccountFragment : BaseFragment(R.layout.fragment_profile_with_a
             }
         TabLayoutMediator(binding.profileTabLayout, binding.viewpager, tabConfigurationStrategy)
             .attach()
+
     }
 
     private val onPageChangedCallback = object : ViewPager2.OnPageChangeCallback() {
@@ -62,6 +63,18 @@ class ProfileWithAccountFragment : BaseFragment(R.layout.fragment_profile_with_a
             adapter = MyFragmentStateAdapter(this@ProfileWithAccountFragment)
             registerOnPageChangeCallback(onPageChangedCallback)
         }
+
+
+        binding.editProfileBtn.setOnClickListener {
+            EditProfileFragment().apply {
+                arguments = Bundle().also {
+                    it.putString("uid", Firebase.auth.uid)
+                }
+            }
+        }
+
+
+
     }
 
     override fun setUpLiveData() {

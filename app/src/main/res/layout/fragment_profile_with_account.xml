@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/send_invite"
             android:padding="@dimen/_8sdp"
+            android:visibility="invisible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_add_person" />

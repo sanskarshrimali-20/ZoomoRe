@@ -40,18 +40,44 @@ class DefaultUserRepo(
     }
 
     override suspend fun addUserToDatabase(
+        userDescription: String,
         username: String,
         authResult: AuthResult,
-        googleProfilePicture: String?
+        profilePicture: String?
     ) =
         safeAccess {
             val user = User(
+                userDescription = userDescription,
                 username = username,
                 followers = 0,
                 following = 0,
                 totalLikes = 0,
-                profilePictureUrl = googleProfilePicture,
+                profilePictureUrl = profilePicture,
                 uid = authResult.user?.uid.toString()
+            )
+
+            realFire
+                .getReference(firePath.getUserInfo(Firebase.auth.uid ?: ""))
+                .setValue(user)
+                .await()
+
+            true
+        }
+
+    override suspend fun editUserToDatabase(
+        userDescription: String,
+        username: String,
+        profilePicture: String?
+    ) =
+        safeAccess {
+            val user = User(
+                userDescription = userDescription,
+                username = username,
+                followers = 0,
+                following = 0,
+                totalLikes = 0,
+                profilePictureUrl = profilePicture,
+                uid = ""
             )
 
             realFire
